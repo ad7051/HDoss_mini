@@ -16,6 +16,7 @@ return menu;
 }
 
 int main(){
+int savecheck=0;
 int size=100;
 	#ifdef DEBUG
 		printf("[Debug] : main.c : size is %d\n",size);
@@ -41,6 +42,7 @@ while(1){
 		printf("[Debug] : product.h : createProduct()\n");
 	#endif
         count +=createProduct(p,count);
+	savecheck=0;
     }else if(menu==2){	
 	#ifdef DEBUG
 		printf("[Debug] : product.h : listProduct()\n");
@@ -55,6 +57,7 @@ while(1){
 		printf("[Debug] : product.h : updateProduct()\n");
 	#endif
         updateProduct(p,count);
+	savecheck=0;
     }else if(menu==4){
 	#ifdef DEBUG
 		printf("[Debug] : manager.h : listProduct()\n");
@@ -64,14 +67,33 @@ while(1){
 		printf("[Debug] : product.h : deleteProduct()\n");
 	#endif
         deleteProduct(p,count);
+	savecheck=0;
     }
     else if(menu==5){
+	#ifdef DEBUG
+		printf("[Debug] : manager.h : saveProduct()\n");
+	#endif
         saveProduct(p,count);
+	savecheck=1;
 	}
    else if(menu==6){
+	#ifdef DEBUG
+		printf("[Debug] : manager.h : searchProduct()\n");
+	#endif
         searchProduct(p,count);
     }
     else if(menu==0){
+	if(savecheck==0){
+	printf("세이브가안 되어 있습니다. 이대로 종료하시겠습까?(1: 저장 후 종료0: 바로 종료)\n");
+	scnaf("%d",savecheck);
+	if(savecheck ==1){
+		#ifdef DEBUG
+			printf("[Debug] : manager.h : saveProduct()\n");
+		#endif
+	        saveProduct(p,count);
+		savecheck=1;
+	}else break;
+	}
         break;
     }
 }
