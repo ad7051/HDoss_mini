@@ -67,7 +67,8 @@ while(1){
     }
     else if(menu==5){
         saveProduct(p,count);
-   /* }else if(menu==6){
+	}
+/*else if(menu==6){
         searchProduct(p,count);
     }*/
     else if(menu==0){
