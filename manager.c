@@ -18,7 +18,7 @@ void saveProduct(product *p[],int count){
     FILE *fp=fopen("product.txt","wt");
     for(int i=0;i<count;i++){
         if(p[i]->price!=-1)
-        fprintf(fp,"%d %d %d %d %s\n",p[i]->weight,p[i]->price,p[i]->stprice,p[i]->review,p[i]->name);
+        fprintf(fp,"%d %d %d %d %s",p[i]->weight,p[i]->price,p[i]->stprice,p[i]->review,p[i]->name);
     }
     printf("저장됨!!\n");
 }
@@ -37,6 +37,6 @@ int loadProduct(product *p[]){
             fgets(p[i]->name,sizeof(p[i]->name),fp);
         }
         printf("불러오기 성공!\n");
-        return i;
+        return i-1;
     }
 }
