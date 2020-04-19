@@ -84,8 +84,8 @@ while(1){
     }
     else if(menu==0){
 	if(savecheck==0){
-	printf("세이브가안 되어 있습니다. 이대로 종료하시겠습까?(1: 저장 후 종료0: 바로 종료)\n");
-	scnaf("%d",savecheck);
+	printf("세이브가 안 되어 있습니다.\n 이대로 종료하시겠습까?(1: 저장 후 종료0: 바로 종료)\n");
+	scanf("%d",&savecheck);
 	if(savecheck ==1){
 		#ifdef DEBUG
 			printf("[Debug] : manager.h : saveProduct()\n");
