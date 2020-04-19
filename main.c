@@ -7,7 +7,7 @@ printf("1. 과자 정보 추가\n");
 printf("2. 과자 정보 출력\n");
 printf("3. 과자 정보 수정\n");
 printf("4. 과자 정보 삭제\n");
-//printf("5. 과자 정보 저장\n");
+printf("5. 과자 정보 저장\n");
 //printf("6. 과자 정보 검색\n");
 printf("0. 종료\n");
 printf("\n메뉴 번호를 입력해주세요.");
@@ -30,7 +30,7 @@ for(int i=0;i<size;i++){
 	#endif
 int count=0;
 int menu;
-//count = loadProduct(p);
+count = loadProduct(p);
 while(1){
     menu=readmenu();
     if(menu==1){
@@ -65,9 +65,9 @@ while(1){
 	#endif
         deleteProduct(p,count);
     }
-	/*else if(menu==5){
+    else if(menu==5){
         saveProduct(p,count);
-    }else if(menu==6){
+   /* }else if(menu==6){
         searchProduct(p,count);
     }*/
     else if(menu==0){
