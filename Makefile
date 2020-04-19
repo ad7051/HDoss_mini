@@ -11,4 +11,4 @@ $(TP) : $(DEPENDENCY)
 $(DP) : $(DEPENDENCY)
 	$(CC) -DDEBUG -o $@ $^
 clean : 
-	rm *.o market market_debug
+	rm *.o market market_debug *.txt
